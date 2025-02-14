@@ -1,28 +1,11 @@
-# NestJS Playground
+this branch was to review 3 approaches to config in nest:
+1. base nest code
+2. my private package code
+3. `nest-typed-config` module
 
-A simple NestJS application that i use for testing and experimenting with various features and concepts.
+results:
+1. nest base code isnt typed. can add validations on top but without have to type cast explicitly and can be incorrect as shown
+2. my code is typed on top of base config from nest, can add validations, but clunkier than other package
+3. `nest-config-typed` cleaner, typed and auto validates without having to explicitly register. only drawback is not being able to reuse types which is not huge issue
 
-## Quick Start
-
-```bash
-# Install dependencies
-$ npm install
-
-# Run in development
-$ npm run start
-# or in watch mode
-$ npm run start:dev
-# or production mode
-$ npm run start:prod
-```
-
-## Testing
-
-```bash
-# unit tests
-$ npm run test
-# e2e tests
-$ npm run test:e2e
-# test coverage
-$ npm run test:cov
-```
+should favour the `nest-config-typed`
